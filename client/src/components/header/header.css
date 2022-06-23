@@ -5,6 +5,7 @@
   display: flex;
 
   justify-content: center;
+  position: relative;
 }
 
 .headerContainer {
@@ -43,4 +44,25 @@
     padding:10px;
     cursor:pointer;
     font-weight:500;
+}
+
+.headerSearch{
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+    background-color:white;
+    border:3px solid #febb02;
+    padding:10px 0px;
+    border-radius:5px;
+    position:absolute;
+    bottom:-25px;
+    width:100%;
+    max-width: 1024px;
+
+
+}
+
+
+.headerIcon{
+  color:lightgray;
 }
