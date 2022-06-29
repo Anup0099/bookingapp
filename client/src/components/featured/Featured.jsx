@@ -31,6 +31,10 @@ const Featured = () => {
           alt=""
           className="featuredImg"
         />
+        <div className="featuredTitles">
+          <h1>reno</h1>
+          <h2>523 properties</h2>
+        </div>
       </div>
     </div>
   );
