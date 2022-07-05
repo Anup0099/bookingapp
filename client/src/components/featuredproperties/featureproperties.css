@@ -19,3 +19,25 @@
     border-radius: 5px;
     object-fit: cover;
 }
+.fpName{
+    font-weight: bold;
+}
+
+.fpCity{
+    font-weight: 300;
+}
+fpPrice{
+    font-weight: 500;
+}
+.fpRating>button{
+    background-color: #003500;
+    color: white;
+    border: none;
+    padding: 3px;
+    margin-right: 10px;
+    font-weight:bold;
+}
+
+.fpRating> span{
+   font-size: 14px; 
+}

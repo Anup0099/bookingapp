@@ -7,12 +7,13 @@ import {
   faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useState} from "react";
 import "./header.css";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
+import {useNavigate} from "react-router-dom";
 const Header = ({ type }) => {
   const [date, setDate] = useState([
     {
@@ -21,6 +22,7 @@ const Header = ({ type }) => {
       key: "selection",
     },
   ]);
+  const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
@@ -28,6 +30,7 @@ const Header = ({ type }) => {
     children: 0,
     room: 1,
   });
+  const navigate = useNavigate();
   const handleOption = (name, operations) => {
     setOptions((prev) => {
       return {
@@ -36,7 +39,9 @@ const Header = ({ type }) => {
       };
     });
   };
-
+  const handleSearch = () => {
+    navigate("/hotels", { state: { destination, date, options } });
+  };
   return (
     <div className="header">
       <div
@@ -81,6 +86,7 @@ const Header = ({ type }) => {
                   type="text"
                   placeholder="where are you going?"
                   className="headerSearchInput"
+                  onChange={(e) => setDestination(e.target.value)}
                 />
               </div>
               <div className="headerSearchItem">
@@ -183,7 +189,9 @@ const Header = ({ type }) => {
                 )}
               </div>
               <div className="headerSearchItem">
-                <button className="headerBtn">Search</button>
+                <button className="headerBtn" onClick={handleSearch}>
+                  Search
+                </button>
               </div>
             </div>
           </>

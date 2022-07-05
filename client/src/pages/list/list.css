@@ -1,0 +1,26 @@
+.ListContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+.ListWrapper{
+    width: 100%;
+    max-width: 1024px;
+    display:flex;
+    gap: 20px;
+}
+
+
+.ListSearch{
+    flex: 1;
+    background-color:#febb02;
+    padding: 10px;
+    border-radius: 10px;
+    position:sticky;
+    top: 10px;
+}
+
+.ListResult{
+    flex:3;
+}
