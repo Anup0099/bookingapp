@@ -105,7 +105,14 @@ const Header = ({ type }) => {
                     moveRangeOnFirstSelection={false} //it will not move the range on first selection of date
                     ranges={date} //this is the state of the date range
                     className="date"
-                    //this is used to set the date range on the date picker
+                   
+                    minDate={new Date()}
+
+
+
+
+
+                     //this is used to set the date range on the date picker
                   />
                 )}
               </div>
