@@ -6,9 +6,10 @@ import userRoute from "./routes/users.js";
 import roomRoute from "./routes/rooms.js";
 import hotelRoute from "./routes/hotels.js";
 import cookieParser from "cookie-parser";
+import  cors from "cors";
 
 const app = express();
-const port = 3000;
+const port = 8000;
 dotenv.config();
 
 const connect = async () => {
@@ -28,7 +29,7 @@ mongoose.connection.on("connected", (err) => {
 
 
 
-
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 //use express json middleware to parse json data in request body and set it to req.body object

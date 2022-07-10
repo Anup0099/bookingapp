@@ -19,7 +19,7 @@ router.get("/:id",verifyAdmin, getRoom);
 
 
 //GET ALL
-router.get("/", verifyAdmin,getRooms);
+router.get("/",getRooms);
 
 
 export default router;

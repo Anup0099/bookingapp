@@ -7,13 +7,13 @@ import {
   faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./header.css";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Header = ({ type }) => {
   const [date, setDate] = useState([
     {
@@ -105,14 +105,9 @@ const Header = ({ type }) => {
                     moveRangeOnFirstSelection={false} //it will not move the range on first selection of date
                     ranges={date} //this is the state of the date range
                     className="date"
-                   
                     minDate={new Date()}
 
-
-
-
-
-                     //this is used to set the date range on the date picker
+                    //this is used to set the date range on the date picker
                   />
                 )}
               </div>

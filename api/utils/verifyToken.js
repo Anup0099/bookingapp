@@ -15,7 +15,7 @@ export const verifyToken = (req, res, next) => {
       return next(createdError(403, "Invalid Token"));
     }
     req.user = user;
-    next(); //if token is valid, continue to next middleware
+    next(); //if token is valid, continue to next middleware  and if token is invalid, return error to user
   });
 };
 
