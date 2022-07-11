@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import List from "./pages/list/List";
 import Hotel from "./pages/hotel/Hotel";
+import Login from "./Login/Login";
 function App() {
   return (
     <BrowserRouter>
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/hotels" element={<List />} />
         <Route path="/hotels/:id" element={<Hotel />} />
+        <Route path="/login" element={<Login />} />
         //element is the component that will be rendered when the path matches
         the url in the browser hotel component shows the hotel details and the
         list component shows the list of hotels and the home component shows the
