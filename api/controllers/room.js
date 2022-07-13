@@ -1,4 +1,4 @@
-import Room from "../models/room.js";
+import Room from "../models/Room.js";
 import Hotel from "../models/Hotel.js";
 import { createdError } from "../utils/error.js";
 
@@ -34,6 +34,28 @@ export const updateRoom = async (req, res, next) => {
     next(err);
   }
 };
+
+export const updateRoomAvailability = async (req, res, next) => {
+  try {
+    await Room.updateOne(
+      {"roomNumbers._id": req.params.id},
+      { 
+        $push:{
+          "roomNumbers.$.unavailableDates": req.body.dates
+        }
+      }
+      
+      
+      ),
+    
+
+    res.status(200).json("room has been updated");
+  } catch (err) {
+    //update hotel and save it to database  and return it to client side
+    next(err);
+  }
+};
+
 
 export const deleteRoom = async (req, res, next) => {
   const hotelid = req.params.hotelid;

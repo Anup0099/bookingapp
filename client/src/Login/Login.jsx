@@ -14,7 +14,7 @@ const Login = () => {
       setCredentials(prev=>({...prev,[e.target.id]:e.target.value}))
     }
     const handleClick=async e=>{
-      e.preventDefault();
+     e.preventDefault()
       dispatch({type:"LOGIN_START"})
       try{
         const res=await axios.post("/auth/login",credentials)
